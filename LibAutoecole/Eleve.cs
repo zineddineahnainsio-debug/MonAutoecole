@@ -13,6 +13,10 @@
             this._dateinscription = dateinscription;
             this._credit = credit;
         }
+        public Eleve()
+        {
+
+        }
         public string getNom()
         {
             return _nom; 

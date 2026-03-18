@@ -39,7 +39,11 @@ namespace FrAutoecole
         {
         }
         Eleve[] tabEleve = new Eleve[10];
+        Vehicule[] tabVehicule = new Vehicule[10];
+        Lecon[] tabLecon = new Lecon[10];
         int i = 0;
+        int j = 0;
+        int k = 0;
         private void btnValiderE_Click(object sender, EventArgs e)
         {
             tabEleve[i] = new Eleve(txtNom.Text, txtPrenom.Text, dtpInscription.Value.Date, Convert.ToInt32(txtCredit.Text));
@@ -55,23 +59,51 @@ namespace FrAutoecole
 
         private void btnValiderV_Click(object sender, EventArgs e)
         {
-
+            tabVehicule[j] = new Vehicule(txtImmat.Text, txtModel.Text, txtCouleur.Text);
+            j++;
+            if (j == tabVehicule.Length)
+            {
+                MessageBox.Show("Le tableau est plein");
+            }
+            txtImmat.Clear();
+            txtModel.Clear();
+            txtCouleur.Clear();
+            chkEtat.Checked = false;
         }
 
         private void btnValiderL_Click(object sender, EventArgs e)
         {
-            Eleve elv = new Eleve(txtNom.Text, txtPrenom.Text, dtpInscription.Value.Date, Convert.ToInt32(txtCredit.Text));
-            /*foreach (Eleve eleve in tabEleve)
+            Eleve elv = new Eleve();
+            foreach (Eleve eleve in tabEleve)
             {
                 if (eleve != null)
                 {
-                    if (eleve.getNom() == txtCreditEleve.Text)
+                    if (eleve.getNom() == txtEleve.Text)
                     {
                         elv = eleve;
                     }
                 }
             }
-            tabLecon[i] = new Lecon(dtpLecon.Value,dtpHeure.Value,chkEffectuer.Checked);*/
+            Vehicule vhc = new Vehicule();
+            foreach (Vehicule vehicule in tabVehicule)
+            {
+                if (vehicule != null)
+                {
+                    if (vehicule.Getimmat() == txtVehicule.Text)
+                    {
+                        vhc = vehicule;
+                    }
+                }
+            }
+            tabLecon[k] = new Lecon(dtpLecon.Value, dtpHeure.Value, chkEffectuer.Checked, elv, vhc);
+            k++;
+            if (k == tabLecon.Length)
+            {
+                MessageBox.Show("Le tableau est plein");
+            }
+            txtEleve.Clear();
+            txtVehicule.Clear();
+            chkEffectuer.Checked = false;
         }
     }
 }

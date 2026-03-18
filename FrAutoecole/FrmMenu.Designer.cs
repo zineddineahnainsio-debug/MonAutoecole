@@ -40,25 +40,25 @@
             lblNom = new Label();
             grbVehicule = new GroupBox();
             btnValiderV = new Button();
-            checkBox1 = new CheckBox();
+            chkEtat = new CheckBox();
             label8 = new Label();
-            textBox4 = new TextBox();
-            textBox6 = new TextBox();
+            txtCouleur = new TextBox();
+            txtImmat = new TextBox();
             label5 = new Label();
             label7 = new Label();
-            textBox5 = new TextBox();
+            txtModel = new TextBox();
             label6 = new Label();
             grpLecon = new GroupBox();
+            dtpHeure = new DateTimePicker();
             btnValiderL = new Button();
-            dateTimePicker3 = new DateTimePicker();
-            checkBox2 = new CheckBox();
+            chkEffectuer = new CheckBox();
             label12 = new Label();
             label13 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            textBox8 = new TextBox();
+            dtpLecon = new DateTimePicker();
+            txtEleve = new TextBox();
             label9 = new Label();
             lblEleve = new Label();
-            textBox7 = new TextBox();
+            txtVehicule = new TextBox();
             lblVehicule = new Label();
             grbEleve.SuspendLayout();
             grbVehicule.SuspendLayout();
@@ -163,13 +163,13 @@
             // grbVehicule
             // 
             grbVehicule.Controls.Add(btnValiderV);
-            grbVehicule.Controls.Add(checkBox1);
+            grbVehicule.Controls.Add(chkEtat);
             grbVehicule.Controls.Add(label8);
-            grbVehicule.Controls.Add(textBox4);
-            grbVehicule.Controls.Add(textBox6);
+            grbVehicule.Controls.Add(txtCouleur);
+            grbVehicule.Controls.Add(txtImmat);
             grbVehicule.Controls.Add(label5);
             grbVehicule.Controls.Add(label7);
-            grbVehicule.Controls.Add(textBox5);
+            grbVehicule.Controls.Add(txtModel);
             grbVehicule.Controls.Add(label6);
             grbVehicule.Location = new Point(401, 12);
             grbVehicule.Name = "grbVehicule";
@@ -189,14 +189,14 @@
             btnValiderV.UseVisualStyleBackColor = false;
             btnValiderV.Click += btnValiderV_Click;
             // 
-            // checkBox1
+            // chkEtat
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(148, 117);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(15, 14);
-            checkBox1.TabIndex = 16;
-            checkBox1.UseVisualStyleBackColor = true;
+            chkEtat.AutoSize = true;
+            chkEtat.Location = new Point(148, 117);
+            chkEtat.Name = "chkEtat";
+            chkEtat.Size = new Size(15, 14);
+            chkEtat.TabIndex = 16;
+            chkEtat.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -207,20 +207,20 @@
             label8.TabIndex = 15;
             label8.Text = "En Etat";
             // 
-            // textBox4
+            // txtCouleur
             // 
-            textBox4.Location = new Point(148, 82);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 14;
-            textBox4.TextChanged += textBox4_TextChanged;
+            txtCouleur.Location = new Point(148, 82);
+            txtCouleur.Name = "txtCouleur";
+            txtCouleur.Size = new Size(100, 23);
+            txtCouleur.TabIndex = 14;
+            txtCouleur.TextChanged += textBox4_TextChanged;
             // 
-            // textBox6
+            // txtImmat
             // 
-            textBox6.Location = new Point(148, 19);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 10;
+            txtImmat.Location = new Point(148, 19);
+            txtImmat.Name = "txtImmat";
+            txtImmat.Size = new Size(100, 23);
+            txtImmat.TabIndex = 10;
             // 
             // label5
             // 
@@ -241,12 +241,12 @@
             label7.TabIndex = 9;
             label7.Text = "Immatriculation";
             // 
-            // textBox5
+            // txtModel
             // 
-            textBox5.Location = new Point(148, 48);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 12;
+            txtModel.Location = new Point(148, 48);
+            txtModel.Name = "txtModel";
+            txtModel.Size = new Size(100, 23);
+            txtModel.TabIndex = 12;
             // 
             // label6
             // 
@@ -259,16 +259,16 @@
             // 
             // grpLecon
             // 
+            grpLecon.Controls.Add(dtpHeure);
             grpLecon.Controls.Add(btnValiderL);
-            grpLecon.Controls.Add(dateTimePicker3);
-            grpLecon.Controls.Add(checkBox2);
+            grpLecon.Controls.Add(chkEffectuer);
             grpLecon.Controls.Add(label12);
             grpLecon.Controls.Add(label13);
-            grpLecon.Controls.Add(dateTimePicker2);
-            grpLecon.Controls.Add(textBox8);
+            grpLecon.Controls.Add(dtpLecon);
+            grpLecon.Controls.Add(txtEleve);
             grpLecon.Controls.Add(label9);
             grpLecon.Controls.Add(lblEleve);
-            grpLecon.Controls.Add(textBox7);
+            grpLecon.Controls.Add(txtVehicule);
             grpLecon.Controls.Add(lblVehicule);
             grpLecon.Location = new Point(140, 221);
             grpLecon.Name = "grpLecon";
@@ -276,6 +276,16 @@
             grpLecon.TabIndex = 0;
             grpLecon.TabStop = false;
             grpLecon.Text = "Lecon";
+            // 
+            // dtpHeure
+            // 
+            dtpHeure.CustomFormat = "hh:mm:ss";
+            dtpHeure.Format = DateTimePickerFormat.Time;
+            dtpHeure.Location = new Point(147, 116);
+            dtpHeure.Name = "dtpHeure";
+            dtpHeure.ShowUpDown = true;
+            dtpHeure.Size = new Size(177, 23);
+            dtpHeure.TabIndex = 20;
             // 
             // btnValiderL
             // 
@@ -288,24 +298,14 @@
             btnValiderL.UseVisualStyleBackColor = false;
             btnValiderL.Click += btnValiderL_Click;
             // 
-            // dateTimePicker3
+            // chkEffectuer
             // 
-            dateTimePicker3.CustomFormat = "hh:mm:ss";
-            dateTimePicker3.Format = DateTimePickerFormat.Custom;
-            dateTimePicker3.Location = new Point(147, 116);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(200, 23);
-            dateTimePicker3.TabIndex = 16;
-            dateTimePicker3.ValueChanged += dateTimePicker3_ValueChanged;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(147, 149);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(15, 14);
-            checkBox2.TabIndex = 19;
-            checkBox2.UseVisualStyleBackColor = true;
+            chkEffectuer.AutoSize = true;
+            chkEffectuer.Location = new Point(147, 149);
+            chkEffectuer.Name = "chkEffectuer";
+            chkEffectuer.Size = new Size(15, 14);
+            chkEffectuer.TabIndex = 19;
+            chkEffectuer.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -325,19 +325,19 @@
             label13.TabIndex = 18;
             label13.Text = "Effectuee";
             // 
-            // dateTimePicker2
+            // dtpLecon
             // 
-            dateTimePicker2.Location = new Point(147, 80);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(177, 23);
-            dateTimePicker2.TabIndex = 14;
+            dtpLecon.Location = new Point(147, 80);
+            dtpLecon.Name = "dtpLecon";
+            dtpLecon.Size = new Size(177, 23);
+            dtpLecon.TabIndex = 14;
             // 
-            // textBox8
+            // txtEleve
             // 
-            textBox8.Location = new Point(147, 22);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(100, 23);
-            textBox8.TabIndex = 10;
+            txtEleve.Location = new Point(147, 22);
+            txtEleve.Name = "txtEleve";
+            txtEleve.Size = new Size(100, 23);
+            txtEleve.TabIndex = 10;
             // 
             // label9
             // 
@@ -357,12 +357,12 @@
             lblEleve.TabIndex = 9;
             lblEleve.Text = "Eleve";
             // 
-            // textBox7
+            // txtVehicule
             // 
-            textBox7.Location = new Point(147, 51);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 12;
+            txtVehicule.Location = new Point(147, 51);
+            txtVehicule.Name = "txtVehicule";
+            txtVehicule.Size = new Size(100, 23);
+            txtVehicule.TabIndex = 12;
             // 
             // lblVehicule
             // 
@@ -407,25 +407,25 @@
         private Button btnValiderE;
         private DateTimePicker dtpInscription;
         private Label lblInscription;
-        private TextBox textBox4;
-        private TextBox textBox6;
+        private TextBox txtCouleur;
+        private TextBox txtImmat;
         private Label label5;
         private Label label7;
-        private TextBox textBox5;
+        private TextBox txtModel;
         private Label label6;
         private Button btnValiderV;
-        private CheckBox checkBox1;
+        private CheckBox chkEtat;
         private Label label8;
-        private DateTimePicker dateTimePicker3;
         private Label label12;
-        private DateTimePicker dateTimePicker2;
-        private TextBox textBox8;
+        private DateTimePicker dtpLecon;
+        private TextBox txtEleve;
         private Label label9;
         private Label lblEleve;
-        private TextBox textBox7;
+        private TextBox txtVehicule;
         private Label lblVehicule;
         private Button btnValiderL;
-        private CheckBox checkBox2;
+        private CheckBox chkEffectuer;
         private Label label13;
+        private DateTimePicker dtpHeure;
     }
 }
