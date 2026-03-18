@@ -49,17 +49,17 @@
             txtModel = new TextBox();
             label6 = new Label();
             grpLecon = new GroupBox();
+            cmbEleve = new ComboBox();
             dtpHeure = new DateTimePicker();
             btnValiderL = new Button();
             chkEffectuer = new CheckBox();
             label12 = new Label();
             label13 = new Label();
             dtpLecon = new DateTimePicker();
-            txtEleve = new TextBox();
             label9 = new Label();
             lblEleve = new Label();
-            txtVehicule = new TextBox();
             lblVehicule = new Label();
+            cmbVehicule = new ComboBox();
             grbEleve.SuspendLayout();
             grbVehicule.SuspendLayout();
             grpLecon.SuspendLayout();
@@ -259,16 +259,16 @@
             // 
             // grpLecon
             // 
+            grpLecon.Controls.Add(cmbVehicule);
+            grpLecon.Controls.Add(cmbEleve);
             grpLecon.Controls.Add(dtpHeure);
             grpLecon.Controls.Add(btnValiderL);
             grpLecon.Controls.Add(chkEffectuer);
             grpLecon.Controls.Add(label12);
             grpLecon.Controls.Add(label13);
             grpLecon.Controls.Add(dtpLecon);
-            grpLecon.Controls.Add(txtEleve);
             grpLecon.Controls.Add(label9);
             grpLecon.Controls.Add(lblEleve);
-            grpLecon.Controls.Add(txtVehicule);
             grpLecon.Controls.Add(lblVehicule);
             grpLecon.Location = new Point(140, 221);
             grpLecon.Name = "grpLecon";
@@ -276,6 +276,14 @@
             grpLecon.TabIndex = 0;
             grpLecon.TabStop = false;
             grpLecon.Text = "Lecon";
+            // 
+            // cmbEleve
+            // 
+            cmbEleve.FormattingEnabled = true;
+            cmbEleve.Location = new Point(147, 19);
+            cmbEleve.Name = "cmbEleve";
+            cmbEleve.Size = new Size(100, 23);
+            cmbEleve.TabIndex = 9;
             // 
             // dtpHeure
             // 
@@ -332,13 +340,6 @@
             dtpLecon.Size = new Size(177, 23);
             dtpLecon.TabIndex = 14;
             // 
-            // txtEleve
-            // 
-            txtEleve.Location = new Point(147, 22);
-            txtEleve.Name = "txtEleve";
-            txtEleve.Size = new Size(100, 23);
-            txtEleve.TabIndex = 10;
-            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -357,13 +358,6 @@
             lblEleve.TabIndex = 9;
             lblEleve.Text = "Eleve";
             // 
-            // txtVehicule
-            // 
-            txtVehicule.Location = new Point(147, 51);
-            txtVehicule.Name = "txtVehicule";
-            txtVehicule.Size = new Size(100, 23);
-            txtVehicule.TabIndex = 12;
-            // 
             // lblVehicule
             // 
             lblVehicule.AutoSize = true;
@@ -372,6 +366,14 @@
             lblVehicule.Size = new Size(51, 15);
             lblVehicule.TabIndex = 11;
             lblVehicule.Text = "Vehicule";
+            // 
+            // cmbVehicule
+            // 
+            cmbVehicule.FormattingEnabled = true;
+            cmbVehicule.Location = new Point(147, 51);
+            cmbVehicule.Name = "cmbVehicule";
+            cmbVehicule.Size = new Size(100, 23);
+            cmbVehicule.TabIndex = 21;
             // 
             // FrmMenu
             // 
@@ -400,7 +402,6 @@
         private GroupBox grpLecon;
         private TextBox txtPrenom;
         private Label lblPrenom;
-        private TextBox txtNom;
         private Label lblNom;
         private TextBox txtCredit;
         private Label lblCredit;
@@ -418,14 +419,15 @@
         private Label label8;
         private Label label12;
         private DateTimePicker dtpLecon;
-        private TextBox txtEleve;
         private Label label9;
         private Label lblEleve;
-        private TextBox txtVehicule;
         private Label lblVehicule;
         private Button btnValiderL;
         private CheckBox chkEffectuer;
         private Label label13;
         private DateTimePicker dtpHeure;
+        private TextBox txtNom;
+        private ComboBox cmbEleve;
+        private ComboBox cmbVehicule;
     }
 }

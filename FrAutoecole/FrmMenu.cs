@@ -6,11 +6,16 @@ namespace FrAutoecole
 {
     public partial class FrmMenu : Form
     {
+        List<Eleve> lstEleve;
+        List<Vehicule> lstVehicule;
         public FrmMenu()
         {
             InitializeComponent();
+            lstEleve = new List<Eleve>();
+            lstVehicule = new List<Vehicule>();
         }
-
+        Lecon[] tabLecon = new Lecon[10];
+        int k = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -38,19 +43,14 @@ namespace FrAutoecole
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
         }
-        Eleve[] tabEleve = new Eleve[10];
-        Vehicule[] tabVehicule = new Vehicule[10];
-        Lecon[] tabLecon = new Lecon[10];
-        int i = 0;
-        int j = 0;
-        int k = 0;
+
         private void btnValiderE_Click(object sender, EventArgs e)
         {
-            tabEleve[i] = new Eleve(txtNom.Text, txtPrenom.Text, dtpInscription.Value.Date, Convert.ToInt32(txtCredit.Text));
-            i++;
-            if (i == tabEleve.Length)
+            lstEleve.Add(new Eleve(txtNom.Text, txtPrenom.Text, dtpInscription.Value.Date, Convert.ToInt16(txtCredit.Text)));
+            cmbEleve.Items.Clear();
+            foreach (Eleve eleve in lstEleve)
             {
-                MessageBox.Show("Le tableau est plein");
+                cmbEleve.Items.Add(eleve.getNom());
             }
             txtNom.Clear();
             txtPrenom.Clear();
@@ -59,11 +59,11 @@ namespace FrAutoecole
 
         private void btnValiderV_Click(object sender, EventArgs e)
         {
-            tabVehicule[j] = new Vehicule(txtImmat.Text, txtModel.Text, txtCouleur.Text);
-            j++;
-            if (j == tabVehicule.Length)
+            lstVehicule.Add(new Vehicule(txtImmat.Text, txtModel.Text, txtCouleur.Text));
+            cmbVehicule.Items.Clear();
+            foreach (Vehicule vehicule in lstVehicule)
             {
-                MessageBox.Show("Le tableau est plein");
+                cmbVehicule.Items.Add(vehicule.Getimmat());
             }
             txtImmat.Clear();
             txtModel.Clear();
@@ -74,22 +74,24 @@ namespace FrAutoecole
         private void btnValiderL_Click(object sender, EventArgs e)
         {
             Eleve elv = new Eleve();
-            foreach (Eleve eleve in tabEleve)
+            string eleveNom = cmbEleve.SelectedItem.ToString();
+            foreach (Eleve eleve in lstEleve)
             {
                 if (eleve != null)
                 {
-                    if (eleve.getNom() == txtEleve.Text)
+                    if (eleve.getNom() == eleveNom)
                     {
                         elv = eleve;
                     }
                 }
             }
             Vehicule vhc = new Vehicule();
-            foreach (Vehicule vehicule in tabVehicule)
+            string vehiculeImmat = cmbVehicule.SelectedItem.ToString();
+            foreach (Vehicule vehicule in lstVehicule)
             {
                 if (vehicule != null)
                 {
-                    if (vehicule.Getimmat() == txtVehicule.Text)
+                    if (vehicule.Getimmat() == eleveNom)
                     {
                         vhc = vehicule;
                     }
@@ -101,8 +103,6 @@ namespace FrAutoecole
             {
                 MessageBox.Show("Le tableau est plein");
             }
-            txtEleve.Clear();
-            txtVehicule.Clear();
             chkEffectuer.Checked = false;
         }
     }
