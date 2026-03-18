@@ -6,7 +6,7 @@
         private string _prenom;
         private DateTime _dateinscription;
         public int _credit;
-        public Eleve(string nom, string prenom, DateTime dateinscription, int credit)
+        public Eleve(string nom,string prenom,DateTime dateinscription,int credit)
         {
             this._nom = nom;
             this._prenom = prenom;
@@ -15,12 +15,14 @@
         }
         public string getNom()
         {
-            return _nom;
+            return _nom; 
         }
         public override string ToString()
         {
             return $"{_nom} {_prenom} {_dateinscription} {_credit}";
 
         }
+
+
     }
 }
