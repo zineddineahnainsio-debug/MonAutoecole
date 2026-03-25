@@ -91,7 +91,7 @@ namespace FrAutoecole
             {
                 if (vehicule != null)
                 {
-                    if (vehicule.Getimmat() == eleveNom)
+                    if (vehicule.Getimmat() == vehiculeImmat)
                     {
                         vhc = vehicule;
                     }

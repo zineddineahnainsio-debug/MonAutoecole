@@ -1,0 +1,1 @@
+2)Pouvoir récupérer et sélectionner les noms validés dans la Groupbox
