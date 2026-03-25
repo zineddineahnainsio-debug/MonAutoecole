@@ -1,1 +1,4 @@
-2)Pouvoir récupérer et sélectionner les noms validés dans la Groupbox
+2)Pouvoir récupérer et sélectionner les noms validés dans la GroupboxEleve dans cmbEleve sans avoir à les retaper par mémoire,le même vaut pour l'immatriculation des véhicules
+3)On remplit cmbEleve en complétant le formulaire de l'élève puis le valider
+4)Ca efface tous les éléments de cmbEleve
+5)Car juste après chaque élément présent dans la liste lstEleve va être mis dans cmbEleve grâce au foreach, donc à chaque fois qu'on valide on réintialise cmbEleve,et sans cmb.Eleve.Items.Clear();on remettrait à chaque fois le nouveau élément validé plus le(s) élément(s) déjà validé(s)avant, ce qui ménera à des répétitions d'éléments
