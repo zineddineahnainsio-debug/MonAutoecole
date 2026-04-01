@@ -67,6 +67,9 @@
             label2 = new Label();
             label1 = new Label();
             lstLecons = new ListBox();
+            nbEleve = new Label();
+            NbEleves = new Label();
+            NbLeçons = new Label();
             grbEleve.SuspendLayout();
             grbVehicule.SuspendLayout();
             grpLecon.SuspendLayout();
@@ -385,6 +388,9 @@
             // 
             // grpAutoEcole
             // 
+            grpAutoEcole.Controls.Add(NbLeçons);
+            grpAutoEcole.Controls.Add(NbEleves);
+            grpAutoEcole.Controls.Add(nbEleve);
             grpAutoEcole.Controls.Add(btnValiderA);
             grpAutoEcole.Controls.Add(cmbEleveA);
             grpAutoEcole.Controls.Add(txtNomA);
@@ -392,7 +398,7 @@
             grpAutoEcole.Controls.Add(label1);
             grpAutoEcole.Location = new Point(129, 450);
             grpAutoEcole.Name = "grpAutoEcole";
-            grpAutoEcole.Size = new Size(228, 221);
+            grpAutoEcole.Size = new Size(329, 221);
             grpAutoEcole.TabIndex = 9;
             grpAutoEcole.TabStop = false;
             grpAutoEcole.Text = "AutoEcole";
@@ -453,6 +459,32 @@
             lstLecons.Size = new Size(136, 79);
             lstLecons.TabIndex = 10;
             lstLecons.SelectedIndexChanged += lstLecons_SelectedIndexChanged;
+            // 
+            // nbEleve
+            // 
+            nbEleve.AutoSize = true;
+            nbEleve.Location = new Point(193, 64);
+            nbEleve.Name = "nbEleve";
+            nbEleve.Size = new Size(0, 15);
+            nbEleve.TabIndex = 23;
+            // 
+            // NbEleves
+            // 
+            NbEleves.AutoSize = true;
+            NbEleves.Location = new Point(179, 64);
+            NbEleves.Name = "NbEleves";
+            NbEleves.Size = new Size(58, 15);
+            NbEleves.TabIndex = 23;
+            NbEleves.Text = "NbEleves:";
+            // 
+            // NbLeçons
+            // 
+            NbLeçons.AutoSize = true;
+            NbLeçons.Location = new Point(179, 130);
+            NbLeçons.Name = "NbLeçons";
+            NbLeçons.Size = new Size(63, 15);
+            NbLeçons.TabIndex = 24;
+            NbLeçons.Text = "NbLeçons:";
             // 
             // FrmMenu
             // 
@@ -519,5 +551,8 @@
         private Label label2;
         private Button btnValiderA;
         private ListBox lstLecons;
+        private Label NbEleves;
+        private Label nbEleve;
+        private Label NbLeçons;
     }
 }

@@ -15,6 +15,8 @@ namespace FrAutoecole
             lstEleve = new List<Eleve>();
             lstVehicule = new List<Vehicule>();
             lstLecon = new List<Lecon>();
+            NbEleves.Text = "NbEleves: " + Convert.ToString(lstEleve.Count);
+            NbLeçons.Text = "NbLeçons: " + Convert.ToString(lstLecon.Count);
         }
         Lecon[] tabLecon = new Lecon[10];
         int k = 0;
@@ -56,6 +58,7 @@ namespace FrAutoecole
                 cmbEleve.Items.Add(eleve.getNom());
                 cmbEleveA.Items.Add(eleve.getNom());
             }
+            NbEleves.Text = "NbEleves: " + Convert.ToString(lstEleve.Count);
             txtNom.Clear();
             txtPrenom.Clear();
             txtCredit.Clear();
@@ -110,6 +113,7 @@ namespace FrAutoecole
                 MessageBox.Show("Le tableau est plein");
             }
             chkEffectuer.Checked = false;
+            NbLeçons.Text = "NbLeçons: " + Convert.ToString(lstLecon.Count);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -135,7 +139,7 @@ namespace FrAutoecole
                 if (v.ToString().Contains(cmbEleveA.SelectedItem.ToString()))
                     lstLecons.Items.Add(v.ToString());
             }
-            
+
             txtNomA.Clear();
         }
 
