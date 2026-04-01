@@ -8,11 +8,13 @@ namespace FrAutoecole
     {
         List<Eleve> lstEleve;
         List<Vehicule> lstVehicule;
+        List<Lecon> lstLecon;
         public FrmMenu()
         {
             InitializeComponent();
             lstEleve = new List<Eleve>();
             lstVehicule = new List<Vehicule>();
+            lstLecon = new List<Lecon>();
         }
         Lecon[] tabLecon = new Lecon[10];
         int k = 0;
@@ -48,9 +50,11 @@ namespace FrAutoecole
         {
             lstEleve.Add(new Eleve(txtNom.Text, txtPrenom.Text, dtpInscription.Value.Date, Convert.ToInt16(txtCredit.Text)));
             cmbEleve.Items.Clear();
+            cmbEleveA.Items.Clear();
             foreach (Eleve eleve in lstEleve)
             {
                 cmbEleve.Items.Add(eleve.getNom());
+                cmbEleveA.Items.Add(eleve.getNom());
             }
             txtNom.Clear();
             txtPrenom.Clear();
@@ -97,13 +101,47 @@ namespace FrAutoecole
                     }
                 }
             }
+
             tabLecon[k] = new Lecon(dtpLecon.Value, dtpHeure.Value, chkEffectuer.Checked, elv, vhc);
+            lstLecon.Add(tabLecon[k]);
             k++;
             if (k == tabLecon.Length)
             {
                 MessageBox.Show("Le tableau est plein");
             }
             chkEffectuer.Checked = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpAutoEcole_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstLecons_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnValiderA_Click(object sender, EventArgs e)
+        {
+            lstLecons.Items.Clear();
+            foreach (Lecon v in lstLecon)
+            {
+                if (v.ToString().Contains(cmbEleveA.SelectedItem.ToString()))
+                    lstLecons.Items.Add(v.ToString());
+            }
+            
+            txtNomA.Clear();
+        }
+
+        private void cmbEleveA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

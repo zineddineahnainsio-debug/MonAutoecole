@@ -49,6 +49,7 @@
             txtModel = new TextBox();
             label6 = new Label();
             grpLecon = new GroupBox();
+            cmbVehicule = new ComboBox();
             cmbEleve = new ComboBox();
             dtpHeure = new DateTimePicker();
             btnValiderL = new Button();
@@ -59,10 +60,17 @@
             label9 = new Label();
             lblEleve = new Label();
             lblVehicule = new Label();
-            cmbVehicule = new ComboBox();
+            grpAutoEcole = new GroupBox();
+            btnValiderA = new Button();
+            cmbEleveA = new ComboBox();
+            txtNomA = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            lstLecons = new ListBox();
             grbEleve.SuspendLayout();
             grbVehicule.SuspendLayout();
             grpLecon.SuspendLayout();
+            grpAutoEcole.SuspendLayout();
             SuspendLayout();
             // 
             // grbEleve
@@ -277,6 +285,14 @@
             grpLecon.TabStop = false;
             grpLecon.Text = "Lecon";
             // 
+            // cmbVehicule
+            // 
+            cmbVehicule.FormattingEnabled = true;
+            cmbVehicule.Location = new Point(147, 51);
+            cmbVehicule.Name = "cmbVehicule";
+            cmbVehicule.Size = new Size(100, 23);
+            cmbVehicule.TabIndex = 21;
+            // 
             // cmbEleve
             // 
             cmbEleve.FormattingEnabled = true;
@@ -367,19 +383,84 @@
             lblVehicule.TabIndex = 11;
             lblVehicule.Text = "Vehicule";
             // 
-            // cmbVehicule
+            // grpAutoEcole
             // 
-            cmbVehicule.FormattingEnabled = true;
-            cmbVehicule.Location = new Point(147, 51);
-            cmbVehicule.Name = "cmbVehicule";
-            cmbVehicule.Size = new Size(100, 23);
-            cmbVehicule.TabIndex = 21;
+            grpAutoEcole.Controls.Add(btnValiderA);
+            grpAutoEcole.Controls.Add(cmbEleveA);
+            grpAutoEcole.Controls.Add(txtNomA);
+            grpAutoEcole.Controls.Add(label2);
+            grpAutoEcole.Controls.Add(label1);
+            grpAutoEcole.Location = new Point(129, 450);
+            grpAutoEcole.Name = "grpAutoEcole";
+            grpAutoEcole.Size = new Size(228, 221);
+            grpAutoEcole.TabIndex = 9;
+            grpAutoEcole.TabStop = false;
+            grpAutoEcole.Text = "AutoEcole";
+            grpAutoEcole.Enter += grpAutoEcole_Enter;
+            // 
+            // btnValiderA
+            // 
+            btnValiderA.BackColor = SystemColors.ControlLightLight;
+            btnValiderA.Location = new Point(63, 101);
+            btnValiderA.Name = "btnValiderA";
+            btnValiderA.Size = new Size(75, 23);
+            btnValiderA.TabIndex = 10;
+            btnValiderA.Text = "Valider";
+            btnValiderA.UseVisualStyleBackColor = false;
+            btnValiderA.Click += btnValiderA_Click;
+            // 
+            // cmbEleveA
+            // 
+            cmbEleveA.FormattingEnabled = true;
+            cmbEleveA.Items.AddRange(new object[] { "2", "5" });
+            cmbEleveA.Location = new Point(63, 61);
+            cmbEleveA.Name = "cmbEleveA";
+            cmbEleveA.Size = new Size(100, 23);
+            cmbEleveA.TabIndex = 22;
+            cmbEleveA.SelectedIndexChanged += cmbEleveA_SelectedIndexChanged;
+            // 
+            // txtNomA
+            // 
+            txtNomA.Location = new Point(63, 28);
+            txtNomA.Name = "txtNomA";
+            txtNomA.Size = new Size(100, 23);
+            txtNomA.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 61);
+            label2.Name = "label2";
+            label2.Size = new Size(34, 15);
+            label2.TabIndex = 22;
+            label2.Text = "Eleve";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(34, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Nom";
+            // 
+            // lstLecons
+            // 
+            lstLecons.FormattingEnabled = true;
+            lstLecons.ItemHeight = 15;
+            lstLecons.Location = new Point(166, 580);
+            lstLecons.Name = "lstLecons";
+            lstLecons.Size = new Size(136, 79);
+            lstLecons.TabIndex = 10;
+            lstLecons.SelectedIndexChanged += lstLecons_SelectedIndexChanged;
             // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(807, 450);
+            ClientSize = new Size(807, 718);
+            Controls.Add(lstLecons);
+            Controls.Add(grpAutoEcole);
             Controls.Add(grpLecon);
             Controls.Add(grbVehicule);
             Controls.Add(grbEleve);
@@ -392,6 +473,8 @@
             grbVehicule.PerformLayout();
             grpLecon.ResumeLayout(false);
             grpLecon.PerformLayout();
+            grpAutoEcole.ResumeLayout(false);
+            grpAutoEcole.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -429,5 +512,12 @@
         private TextBox txtNom;
         private ComboBox cmbEleve;
         private ComboBox cmbVehicule;
+        private GroupBox grpAutoEcole;
+        private Label label1;
+        private ComboBox cmbEleveA;
+        private TextBox txtNomA;
+        private Label label2;
+        private Button btnValiderA;
+        private ListBox lstLecons;
     }
 }
